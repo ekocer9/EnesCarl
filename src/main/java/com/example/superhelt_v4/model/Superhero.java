@@ -1,26 +1,26 @@
 package com.example.superhelt_v4.model;
 
+import java.util.List;
+
 public class Superhero {
     private int hero_ID;
     private String heroName;
     private String realName;
     private int creationYear;
     private String cityName;
-    private String superpowerName;
-    private String superpower;
+    private List superpower;
     private String superhero;
     private String city;
 
     public Superhero() {
     }
 
-    public Superhero(int hero_ID, String heroName, String realName, int creationYear, String cityName, String superpowerName, String superpower, String superhero, String city) {
+    public Superhero(int hero_ID, String heroName, String realName, int creationYear, String cityName, List superpower, String superhero, String city) {
         this.hero_ID = hero_ID;
         this.heroName = heroName;
         this.realName = realName;
         this.creationYear = creationYear;
         this.cityName = cityName;
-        this.superpowerName = superpowerName;
         this.superpower = superpower;
         this.superhero = superhero;
         this.city = city;
@@ -36,7 +36,6 @@ public class Superhero {
     public Superhero(String heroName, String realName, String superpowerName) {
         this.heroName = heroName;
         this.realName = realName;
-        this.superpowerName = superpowerName;
 
     }
 
@@ -82,19 +81,11 @@ public class Superhero {
         this.cityName = cityName;
     }
 
-    public String getSuperpowerName() {
-        return superpowerName;
-    }
-
-    public void setSuperpowerName(String superpowerName) {
-        this.superpowerName = superpowerName;
-    }
-
-    public String getSuperpower() {
+    public List getSuperpower() {
         return superpower;
     }
 
-    public void setSuperpower(String superpower) {
+    public void setSuperpower(List superpower) {
         this.superpower = superpower;
     }
 
@@ -114,7 +105,6 @@ public class Superhero {
                 ", realName='" + realName + '\'' +
                 ", creationYear=" + creationYear +
                 ", cityName='" + cityName + '\'' +
-                ", superpowerName='" + superpowerName + '\'' +
                 ", superpower='" + superpower + '\'' +
                 ", superhero='" + superhero + '\'' +
                 ", city='" + city + '\'' +
