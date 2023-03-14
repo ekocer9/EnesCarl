@@ -1,7 +1,6 @@
 package com.example.superhelt_v4.repository;
 
 import com.example.superhelt_v4.dto.CityHeroDTO;
-import com.example.superhelt_v4.dto.HeroCountDTO;
 import com.example.superhelt_v4.dto.HeroCountPowerDTO;
 import com.example.superhelt_v4.dto.HeroPowerDTO;
 import com.example.superhelt_v4.model.Superhero;
@@ -24,8 +23,8 @@ public class SuperheroRepository_DB implements ISuperheroRepository {
     @Value("${spring.datasource.password}")
     private String pwd;
 
-    public List<HeroCountDTO> getSuperheroes() {
-        List<HeroCountDTO> allSuperheroes = new ArrayList<>();
+    public List<Superhero> getSuperheroes() {
+        List<Superhero> allSuperheroes = new ArrayList<>();
 
         try {
             Connection con = DriverManager.getConnection(db_url, uid, pwd);
@@ -37,7 +36,7 @@ public class SuperheroRepository_DB implements ISuperheroRepository {
                 String heroName = rs.getString("heroname");
                 String realName = rs.getString("realname");
                 int creationYear = rs.getInt("creationyear");
-                allSuperheroes.add(new HeroCountDTO(hero_id, heroName, realName, creationYear));
+                allSuperheroes.add(new Superhero(hero_id, heroName, realName, creationYear));
             }
             return allSuperheroes;
         } catch (SQLException e) {

@@ -1,6 +1,6 @@
 package com.example.superhelt_v4.service;
 
-import com.example.superhelt_v4.dto.HeroCountDTO;
+import com.example.superhelt_v4.model.Superhero;
 import com.example.superhelt_v4.repository.SuperheroRepository_DB;
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class SuperheroService {
         this.repository = repository;
     }
 
-    public List<HeroCountDTO> getSuperhero() {
+    public List<Superhero> getSuperhero() {
         return repository.getSuperheroes();
     }
 }
